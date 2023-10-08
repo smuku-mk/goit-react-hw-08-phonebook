@@ -6,6 +6,7 @@ import { ContactForm, ContactList, Filter } from '../../components';
 
 import { fetchContacts } from '../../redux/operations';
 import { selectError, selectIsLoading } from '../../redux/selectors';
+import { Wrapper } from './Contacts.styled';
 
 export const Contacts = () => {
   const dispatch = useDispatch();
@@ -22,9 +23,12 @@ export const Contacts = () => {
         <title>Contacts</title>
       </Helmet>
       <ContactForm />
-      <h2>Contacts</h2>
-      <Filter />
-      {isLoading && !error ? <div>Request in progress...</div> : <ContactList />}
+      <Wrapper>
+        <h2>Filter</h2>
+        <Filter />
+        <h2>Contacts</h2>
+        {isLoading && !error ? <div>Request in progress...</div> : <ContactList />}
+      </Wrapper>
     </>
   );
 };

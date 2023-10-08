@@ -4,6 +4,7 @@ import { deleteContact } from '../../redux/operations';
 
 import { ContactListItem } from '../ContactListItem';
 import PropTypes from 'prop-types';
+import { List } from './ContactList.styled';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
@@ -14,11 +15,11 @@ export const ContactList = () => {
   };
 
   return (
-    <ul>
+    <List>
       {filteredContacts.map(({ id, name, number }) => (
         <ContactListItem key={id} id={id} name={name} number={number} onButtonClick={handleDeleteContact} />
       ))}
-    </ul>
+    </List>
   );
 };
 

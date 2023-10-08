@@ -22,15 +22,15 @@ export const RegisterForm = () => {
   return (
     <Form onSubmit={handleSubmit}>
       <Label>
-        Username
+        <span>Username</span>
         <input type="text" name="name" required />
       </Label>
       <Label>
-        Email
+        <span>Email</span>
         <input type="email" name="email" required />
       </Label>
       <Label>
-        Password
+        <span>Password</span>
         <input type="password" name="password" minLength="8" required />
       </Label>
       <Button type="submit">Register</Button>
