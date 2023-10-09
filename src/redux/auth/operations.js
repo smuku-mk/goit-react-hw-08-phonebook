@@ -40,6 +40,7 @@ export const login = createAsyncThunk('auth/login', async (credentials, thunkAPI
     toast.success('Login successfully!');
     return res.data;
   } catch (error) {
+    toast.error("You don't have an account on the website yet, please register");
     return thunkAPI.rejectWithValue(error.message);
   }
 });
